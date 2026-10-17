@@ -24,3 +24,12 @@ Median Views (Latest) =
 MEDIANX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) RETURN CALCULATE(MAX(VideoMetrics[views]), VideoMetrics[collected_at] = LatestStamp))
 
 Views by Snapshot Date = SUM(VideoMetrics[views])
+
+Videos With Views (Latest) =
+SUMX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) VAR V = CALCULATE(MAX(VideoMetrics[views]), VideoMetrics[collected_at] = LatestStamp) RETURN IF(NOT ISBLANK(V), 1, 0))
+
+Videos With Likes (Latest) =
+SUMX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) VAR L = CALCULATE(MAX(VideoMetrics[likes]), VideoMetrics[collected_at] = LatestStamp) RETURN IF(NOT ISBLANK(L), 1, 0))
+
+Videos With Comments (Latest) =
+SUMX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) VAR C = CALCULATE(MAX(VideoMetrics[comments]), VideoMetrics[collected_at] = LatestStamp) RETURN IF(NOT ISBLANK(C), 1, 0))

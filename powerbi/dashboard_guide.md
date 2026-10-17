@@ -11,6 +11,8 @@ Arrange seven cards across the top: Videos Analyzed, Total Views (Latest), Avera
 - Lower middle: year comparison of average engagement rate by publication year. Add year from published_at and use Average Engagement Rate (Latest); a pie chart can match the reference, though clustered column is easier to compare.
 - Lower right: interaction coverage donut with three counts: videos with views, videos with available likes, videos with available comments. Use distinct video counts; do not sum percentages or treat missing values as zero.
 
+Use these measures from `powerbi/measures.dax` for the interaction coverage donut: `Videos With Views (Latest)`, `Videos With Likes (Latest)`, and `Videos With Comments (Latest)`. Add all three as values. They count each distinct video once using its newest stored observation, and exclude unavailable metrics. Do not use `Count of video_id` from either snapshot table, because that counts observations and repeats a video when it has multiple collection dates.
+
 ## Model
 Videos is the unique lookup table. Relate Videos[video_id] (1) to VideoMetrics[video_id] (*) and EngagementAnalysis[video_id] (*). Snapshot IDs repeat intentionally. Keep ChannelSummary disconnected. Use single-direction filter propagation from Videos to facts.
 
