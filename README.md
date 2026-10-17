@@ -31,3 +31,6 @@ Public engagement rate = (likes + comments) / views × 100 only when both counts
 python -m pytest -q -p no:cacheprovider
 ```
 Tests mock YouTube API calls; they do not spend quota or represent live channel findings. See docs/ for system architecture, database dictionary, methodology, limitations, and report outline. API rules: https://developers.google.com/youtube/terms/api-services-terms-of-service.
+
+## Streamlit dashboard
+Install project dependencies with python -m pip install -r requirements.txt, then run python -m streamlit run streamlit_app.py. The dashboard reads the generated CSV exports from data/exports/ and shows a message if they are missing. It uses latest snapshot per video for headline metrics. This is a sample Streamlit visualization; Power BI remains the primary dashboard deliverable.
