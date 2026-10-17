@@ -1,0 +1,26 @@
+-- Use table names exactly as shown here: Videos, VideoMetrics, EngagementAnalysis.
+-- VideoMetrics is a snapshot fact table; these measures use each video's latest row.
+Videos Analyzed = DISTINCTCOUNT(Videos[video_id])
+
+Total Views (Latest) =
+SUMX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) RETURN CALCULATE(MAX(VideoMetrics[views]), VideoMetrics[collected_at] = LatestStamp))
+
+Total Likes (Latest) =
+SUMX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) RETURN CALCULATE(MAX(VideoMetrics[likes]), VideoMetrics[collected_at] = LatestStamp))
+
+Total Comments (Latest) =
+SUMX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) RETURN CALCULATE(MAX(VideoMetrics[comments]), VideoMetrics[collected_at] = LatestStamp))
+
+Average Engagement Rate (Latest) =
+AVERAGEX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) VAR V = CALCULATE(MAX(VideoMetrics[views]), VideoMetrics[collected_at] = LatestStamp) VAR L = CALCULATE(MAX(VideoMetrics[likes]), VideoMetrics[collected_at] = LatestStamp) VAR C = CALCULATE(MAX(VideoMetrics[comments]), VideoMetrics[collected_at] = LatestStamp) RETURN IF(NOT ISBLANK(V) && V > 0 && NOT ISBLANK(L) && NOT ISBLANK(C), DIVIDE(L + C, V) * 100))
+
+Average Like Rate (Latest) =
+AVERAGEX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) VAR V = CALCULATE(MAX(VideoMetrics[views]), VideoMetrics[collected_at] = LatestStamp) VAR L = CALCULATE(MAX(VideoMetrics[likes]), VideoMetrics[collected_at] = LatestStamp) RETURN IF(NOT ISBLANK(V) && V > 0 && NOT ISBLANK(L), DIVIDE(L, V) * 100))
+
+Average Comment Rate (Latest) =
+AVERAGEX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) VAR V = CALCULATE(MAX(VideoMetrics[views]), VideoMetrics[collected_at] = LatestStamp) VAR C = CALCULATE(MAX(VideoMetrics[comments]), VideoMetrics[collected_at] = LatestStamp) RETURN IF(NOT ISBLANK(V) && V > 0 && NOT ISBLANK(C), DIVIDE(C, V) * 100))
+
+Median Views (Latest) =
+MEDIANX(VALUES(Videos[video_id]), VAR LatestStamp = CALCULATE(MAX(VideoMetrics[collected_at])) RETURN CALCULATE(MAX(VideoMetrics[views]), VideoMetrics[collected_at] = LatestStamp))
+
+Views by Snapshot Date = SUM(VideoMetrics[views])

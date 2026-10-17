@@ -1,0 +1,4 @@
+# Limitations
+Only public Data API metrics are collected. Likes or comments may be hidden. Impressions, click-through, watch time, retention, demographics, and audience-active-time reports require authorized owner analytics and are not available here. Counts are point-in-time observations. Respect current YouTube API policies and retention/deletion requirements. Publishing correlations do not establish causation. Credentials and quota are needed for live collection. PBIX authoring is manual.
+
+Public non-authorized API data is refreshed or deleted within 30 calendar days. Each successful collection purges metric snapshots older than 30 days; historical growth is therefore limited to observations retained within this policy window. See https://developers.google.com/youtube/terms/developer-policies (Section III.E.4).

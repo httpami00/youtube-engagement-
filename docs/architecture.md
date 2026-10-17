@@ -1,0 +1,2 @@
+# Architecture
+FastAPI router (`app/api/v1/endpoints`) validates HTTP inputs and delegates to service functions. Pydantic schemas define constrained payloads. SQLAlchemy models persist videos and append-only metric snapshots in SQLite. `youtube_client` and `collection_service` use official YouTube Data API v3. Analytics and export logic are in services. Config comes from environment/.env. API docs are generated at `/docs`, `/redoc`, `/openapi.json`.
