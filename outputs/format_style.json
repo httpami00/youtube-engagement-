@@ -1,0 +1,170 @@
+{
+  "input": "C:\\Users\\Admin\\Downloads\\format.docx",
+  "fonts_by_char_count": {
+    "Times New Roman": 45574
+  },
+  "direct_run_formatting_runs": 725,
+  "direct_paragraph_formatting_paragraphs": 372,
+  "heading_like_paragraphs_not_heading_style": [
+    {
+      "para_index": 8,
+      "text": "ACKNOWLEDGEMENT",
+      "style": "Normal"
+    },
+    {
+      "para_index": 18,
+      "text": "ABSTRACT",
+      "style": "Normal"
+    },
+    {
+      "para_index": 25,
+      "text": "TABLE OF CONTENTS",
+      "style": "Normal"
+    },
+    {
+      "para_index": 42,
+      "text": "LIST  OF FIGURES",
+      "style": "Normal"
+    },
+    {
+      "para_index": 69,
+      "text": "CHAPTER 1",
+      "style": "Normal"
+    },
+    {
+      "para_index": 70,
+      "text": "INTRODUCTION",
+      "style": "Normal"
+    },
+    {
+      "para_index": 77,
+      "text": " OVERVIEW",
+      "style": "List Paragraph"
+    },
+    {
+      "para_index": 85,
+      "text": " PROBLEM STATEMENT",
+      "style": "List Paragraph"
+    },
+    {
+      "para_index": 89,
+      "text": " OBJECTIVES",
+      "style": "List Paragraph"
+    },
+    {
+      "para_index": 96,
+      "text": "  ORGANIZATION OF REPORT",
+      "style": "List Paragraph"
+    },
+    {
+      "para_index": 116,
+      "text": "CHAPTER 2",
+      "style": "Normal"
+    },
+    {
+      "para_index": 117,
+      "text": "REVIEW OF LITERATURE",
+      "style": "Normal"
+    },
+    {
+      "para_index": 120,
+      "text": "2.1  INTRODUCTION",
+      "style": "Normal"
+    },
+    {
+      "para_index": 122,
+      "text": "2.2  LITERATURE SURVEY",
+      "style": "Normal"
+    },
+    {
+      "para_index": 130,
+      "text": "2.3  FEASIBILITY STUDY",
+      "style": "Normal"
+    },
+    {
+      "para_index": 132,
+      "text": "2.3.1  TECHNICAL FEASIBILITY",
+      "style": "Normal"
+    },
+    {
+      "para_index": 134,
+      "text": "2.3.2  ECONOMICAL FEASIBILITY",
+      "style": "Normal"
+    },
+    {
+      "para_index": 136,
+      "text": "2.3.3  OPERATIONAL FEASIBILITY",
+      "style": "Normal"
+    },
+    {
+      "para_index": 138,
+      "text": "2.3.4  SCHEDULE FEASIBILITY",
+      "style": "Normal"
+    },
+    {
+      "para_index": 164,
+      "text": "                                            CHAPTER 3",
+      "style": "Normal"
+    }
+  ],
+  "examples": {
+    "direct_paragraph_formatting": [
+      {
+        "para_index": 6,
+        "text": "",
+        "style": "Normal"
+      },
+      {
+        "para_index": 7,
+        "text": "",
+        "style": "Normal"
+      },
+      {
+        "para_index": 8,
+        "text": "ACKNOWLEDGEMENT",
+        "style": "Normal"
+      },
+      {
+        "para_index": 10,
+        "text": "Our mini project is titled \"PRODUCT SALES FORECASTING USING QUANTITATIVE METHOD\". Any project requires a lot of hard wor",
+        "style": "Normal"
+      },
+      {
+        "para_index": 11,
+        "text": "We would also like to thank  Dr. Shabana Pathan Head of the Department of Information Technology and all our faculty mem",
+        "style": "Normal"
+      }
+    ],
+    "direct_run_formatting": [
+      {
+        "para_index": 8,
+        "run_text": "ACKNOWLEDGEMENT",
+        "style": "Normal"
+      },
+      {
+        "para_index": 10,
+        "run_text": "Our mini project is titled ",
+        "style": "Normal"
+      },
+      {
+        "para_index": 10,
+        "run_text": "\"PRODUCT SALES FORECASTING USING QUANTITATIVE METHOD\".",
+        "style": "Normal"
+      },
+      {
+        "para_index": 10,
+        "run_text": " Any project requires a lot of hard work, sincerity and systematic work methodol",
+        "style": "Normal"
+      },
+      {
+        "para_index": 11,
+        "run_text": "We would also like to ",
+        "style": "Normal"
+      }
+    ]
+  },
+  "notes": [
+    "Direct formatting is not always wrong, but it often causes inconsistent output when templates change.",
+    "Heading-like paragraphs not using Heading styles can break TOC and accessibility."
+  ]
+}
